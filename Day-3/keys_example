@@ -1,0 +1,50 @@
+🔑 Primary Key (PK)
+✅ Definition:
+
+Primary Key ek column (ya columns ka group) hota hai jo har record ko uniquely identify karta hai.
+
+✅ Important Points:
+
+Duplicate value ❌ allowed
+
+NULL value ❌ allowed
+
+Table me sirf 1 Primary Key hoti hai
+
+Automatically UNIQUE + NOT NULL hoti hai
+
+✅ Example:
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+📌 Real Life Example:
+
+Student ID — har student ka ID alag hota hai.
+
+🔗 Foreign Key (FK)
+✅ Definition:
+
+Foreign Key ek column hota hai jo dusri table ki Primary Key ko reference karta hai.
+
+✅ Important Points:
+
+Tables ke beech relation banata hai
+
+Duplicate allowed ✅
+
+NULL allowed ho sakta hai
+
+Referential Integrity maintain karta hai
+
+✅ Example:
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    student_id INT,
+    FOREIGN KEY (student_id)
+    REFERENCES students(id)
+);
+📌 Real Life Example:
+
+Order table me student_id → students table ke id ko refer karega.
